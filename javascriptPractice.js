@@ -5,7 +5,7 @@ var string = 'this is a string'
 
 var revStr = function (str, newStr) {
     str = str.split('');
-    newStr = newStr.split('');
+    var newStr = newStr.split('');
     for (var i = 0; i < str.length; i++) {
       newStr.unshift(str[i]);
     };
