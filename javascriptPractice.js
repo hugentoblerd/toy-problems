@@ -16,7 +16,7 @@ var revStr = function (str, newStr) {
     console.log(newStr);
 }
 
-// write a function called factorial that takes ina number and returns the factorial (!) of that number. Example: factorial(5) should return 120 because 5 * 4 * 3 * 2 * 1 === 120
+// write a function called factorial that takes in a number and returns the factorial (!) of that number. Example: factorial(5) should return 120 because 5 * 4 * 3 * 2 * 1 === 120
 
 // using for loop
 var factorial = function (num) {
