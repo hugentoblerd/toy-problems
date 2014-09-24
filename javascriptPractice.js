@@ -40,6 +40,26 @@ var factorial1 = function (num) {
     newNum *= num;
   }
   return newNum;
+};
+
+// Write a function called simpleSymbols that takes in a string parameter and determines if it is an acceptable sequence by either returing the string true or false. The str parameter will be composed of + and = symbos with several letters between them (ie. ++d+===+c++==a) and for the string to bbe true each letter must be surrounded by a + symbol. So the string to the left would be false. The string will not be empty and will have at least one letter.
+
+var simpleSymbols = function (str) {
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  var truthy = false;
+  for (var i = 0; i < str.length; i++) {
+    for (var j = 0; j < alphabet.length; j++) {
+      if (str[i] ===alphabet[j]) {
+        if (str[i - 1] === '+' && str[i + 1] === '+') {
+          truthy = true;
+        }else {
+          truthy = false;
+          return truthy;
+        }
+      };
+    };
+  };
+  return truthy;
 }
 
 
