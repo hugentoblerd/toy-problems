@@ -2,19 +2,17 @@
 
 // write a function that reverses a string without using .reverse() method
 
-var string = 'this is a string'
+var string = 'this is a string';
 
 var revStr = function (str, newStr) {
     str = str.split('');
     var newStr = newStr.split('');
     for (var i = 0; i < str.length; i++) {
       newStr.unshift(str[i]);
-    };
+    }
     str = str.join('');
     newStr = newStr.join('');
-    console.log(str);
-    console.log(newStr);
-}
+};
 
 // write a function called factorial that takes in a number and returns the factorial (!) of that number. Example: factorial(5) should return 120 because 5 * 4 * 3 * 2 * 1 === 120
 
@@ -23,10 +21,9 @@ var factorial = function (num) {
   var newNum = num;
   for (num; num > 1 ; num--) {
     newNum = newNum * (num - 1);
-  };
-  console.log(newNum);
+  }
   return newNum;
-}
+};
 
 // using recursion
 var factorial1 = function (num) {
@@ -56,11 +53,11 @@ var simpleSymbols = function (str) {
           truthy = false;
           return truthy;
         }
-      };
-    };
-  };
+      }
+    }
+  }
   return truthy;
-}
+};
 
 // Have the function ABCheck(str) take the str parameter being passed and return the string true if the characters 'a' and 'b' are seperated by exactly 3 places anywhere in the string at least once (ie. "lane borrowed" would result in true because there is exactly three characters between 'a' and 'b'). Otherwise return the string false.
 
@@ -70,11 +67,40 @@ var ABCheck = function (string) {
       if (str[i] === 'a') {
         if (str[i + 4] === 'b' || str[i - 4] === 'b') {
           return true;
-        };
-      };
-    };
+        }
+      }
+    }
   return false;
 };
+
+// write a function that creates a Fibonacci Sequence(0, 1, 1, 2, 3, 4, 8, 13, 21, 34, etc) with 100 numbers
+
+var fibonacci = function () {
+  var arr = [0, 1];
+  for (var i = 0; i < 98; i++) {
+    arr.push(arr[i] + arr[i + 1]);
+  }
+  return arr;
+};
+
+// write a function that takes a number as a parameter and searches the Fibonacci function for that number
+
+  // with for loop
+var searchFibonacci = function (num) {
+  var arr = fibonacci();
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === num) {
+      alert('They found me, I don`t know but they found me!');
+      return true;
+    }
+  }
+  return false;
+};
+
+ // with indexOf
+ var searchFibonacci1 = function (num) {
+   return fibonacci().indexOf(num) > -1;
+ };
 
 
 
