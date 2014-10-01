@@ -102,6 +102,23 @@ var searchFibonacci = function (num) {
    return fibonacci().indexOf(num) > -1;
  };
 
+ // write a function that accepts a number n, and teturns the nth Fibonacci number. for example, the first five Fibonacci numbers are: 0, 1, 1, 2, 3. If n were 4, your function should return 2; for 5, it should return 3.
+
+// using the fibonacci function already created
+ var nthOfFibonacci = function (num) {
+   var arr = fibonacci();
+   return arr[num - 1];
+ };
+
+ // creating a fibonacci sequence within the function
+var nthOfFibonacci1 = function (num) {
+  var arr = [0, 1];
+  for (var i = 0; i < 98; i++) {
+    arr.push(arr[i] + arr[i + 1]);
+  }
+  return arr[num - 1];
+};
+
 
 
 
