@@ -119,6 +119,26 @@ var nthOfFibonacci1 = function (num) {
   return arr[num - 1];
 };
 
+// Find the only item that occurs an even number of times in an array. If there is more than one item that occurs an even number of times, just return the first one. if there are no items that occur an even numbers of times, return null
+
+var evenOccurence = function (numArr) {
+  var occurences = {};
+  for (var i = 0; i < numArr.length; i++) {
+    var temp = numArr[i];
+    if (temp in occurences) {
+      occurences[temp]++;
+    }else {
+      occurences[temp] = 1;
+    };
+  };
+  for (var temp in occurences) {
+    if (occurences[temp] % 2 == 0) {
+      return temp;
+    };
+  };
+  return null;
+};
+
 
 
 
