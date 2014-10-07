@@ -139,6 +139,15 @@ var evenOccurence = function (numArr) {
   return null;
 };
 
+// Given a string that contains a single pair of parentheses, compute a new string made only of the parenthesis and their contents, so "xyz(abc)123" yields "(abc)".
+
+var parens = function (str) {
+  var open = str.indexOf('(');
+  var close = str.indexOf(')');
+  var newStr = str.slice(open, close + 1);
+  return newStr;
+};
+
 
 
 
