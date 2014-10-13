@@ -148,6 +148,22 @@ var parens = function (str) {
   return newStr;
 };
 
+// Write a function that accepts a multi dimensional array and returns a flattened version.
+
+var flattenedArr = function (arr, arrB) {
+  if (!arrB) {arrB = []};
+  var newArr = arrB;
+  for (var i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flattenedArr(arr[i], newArr);
+    }else {
+      newArr.push(arr[i]);
+    };
+  };
+  console.log(newArr);
+  return newArr;
+};
+
 
 
 
