@@ -164,6 +164,25 @@ var flattenedArr = function (arr, arrB) {
   return newArr;
 };
 
+// given an object, write a function that returns an object whose keys are the fields found in the object and whose values are objects containing all the values as keys and a count for how many times that value occurs
+
+var breakDown = function (items) {
+  var groupedProperties = {};
+  for (var i = 0; i < items.length; i++) {
+    for(var prop in items[i]) {
+      if (!groupedProperties[prop]) {
+        groupedProperties[prop] = {};
+      };
+      if (!groupedProperties[prop][items[i][prop]]) {
+        groupedProperties[prop][items[i][prop]] = 1;
+      }else {
+      groupedProperties[prop][items[i][prop]]++;
+      };
+    };
+  };
+  return groupedProperties;
+};
+
 
 
 
