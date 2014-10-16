@@ -183,6 +183,36 @@ var breakDown = function (items) {
   return groupedProperties;
 };
 
+// given the below array, create a function that determines whether the array contains TWO numbers whose sum is equal to 0
+
+var numbers = [6, -2, 5, 3, 9, -5, -1, 0, -4, 4];
+
+var sumZero2 = function (arr) {
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === 0) {
+        return alert('There is! There is 2 numbers whose sum is 0')
+      };
+    };
+  };
+  return alert('Zero is not found...');
+};
+
+// given the above array(numbers), create a function that determines whether the array contains THREE numbers whose sum is equal to 0
+
+var sumZero3 = function (arr) {
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = i + 1; j < arr.length; j++) {
+      for (var k = j + 1; k < arr.length; k++) {
+        if (arr[i] + arr[j] + arr[k] === 0) {
+          return alert('There is! There is 3 numbers whose sum is 0')
+        };
+      };
+    };
+  };
+  return alert('Zero is not found...');
+};
+
 
 
 
