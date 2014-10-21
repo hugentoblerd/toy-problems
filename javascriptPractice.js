@@ -213,6 +213,40 @@ var sumZero3 = function (arr) {
   return alert('Zero is not found...');
 };
 
+// Given an integer array, one element occurs even number of times and all others have odd occurences. Finde the element with even occurrences.
+
+var intArr = [4, 6, 1, 3, 2, 3, 6, 2, 3, 2, 9];
+
+var evenOccur = function (arr) {
+  var arrObj = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (!arrObj[arr[i]]) {
+      arrObj[arr[i]] = 1;
+    }else {
+      arrObj[arr[i]] = ++arrObj[arr[i]];
+    };
+  };
+  for (var prop in arrObj) {
+    if (arrObj[prop] % 2 === 0) {
+      return prop;
+    };
+  };
+  return "There are no even occurences..."
+};
+
+var evenOccur1 = function (arr) {
+  var arrObj = {};
+  for (var i = 0; i < arr.length; i++) {
+    arrObj[arr[i]] = arrObj[arr[i]] ? arrObj[arr[i]]+= 1 : 1
+  };
+  for (var prop in arrObj) {
+    if(arrObj[prop] % 2 === 0) {
+      return prop;
+    }
+  }
+  return 'There are no even occurences...'
+};
+
 
 
 
