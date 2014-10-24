@@ -285,6 +285,23 @@ var interweave2 = function (str1, str2, str3) {
   }
 };
 
+//given the following array, randomize it.
+var students = ["PJ", "Brock", "Erin", "Daniel", "Jacob", "Aaron", "Jason", "Schuyler", "Kory", "Corey", "Zac", "Jonathan", "Skyler", "Jess", "Krissy", "Mark", "David", "Bryson", "Larry", "Fernanda", "Jennifer"];
+
+var randomize = function (arr) {
+  var remaining = arr.length, swap, index;
+  // while there are remaining elements to shuffle
+  while (remaining) {
+    // randomly pick a remaining element
+    index = Math.floor(Math.random() * remaining--);
+    // and swap it with the current element
+    swap = arr[remaining];
+    arr[remaining] = arr[index];
+    arr[index] = swap;
+  };
+  return arr;
+};
+
 
 
 
