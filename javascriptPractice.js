@@ -302,6 +302,48 @@ var randomize = function (arr) {
   return arr;
 };
 
+// Write a function that returns the longest word(s) from a sentance. The function should not return any duplicate words (case-insensitive).
+
+var longestWords = function (str) {
+  str = str.toLowerCase().split(' ');
+  var longest = '';
+  var longestWord = [];
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].trim();
+    if (str[i].length > longest) {
+      longestWord.splice(0, longest - 1, str[i]);
+      longest = str[i].length;
+    }else {
+      if (str[i].length === longest && longestWord.indexOf(str[i]) === -1 && str[i] !== '') {
+        longestWord.push(str[i]);
+      };
+    }
+  };
+  return longestWord;
+};
+
+var longestWords2 = function(str){
+  str = str.split(' ');
+  var longest = '';
+  var longestWords = [];
+  var hash = {};
+  for(var i = 0; i < str.length; i++){
+    if(!hash.hasOwnProperty(str[i].toLowerCase())){
+      if(str[i].length > longest.length){
+        longestWords = [];
+        hash = {};
+        hash[str[i].toLowerCase()] = true;
+        longestWords.push(str[i]);
+        longest = str[i];
+      } else if(str[i].length >= longest.length){
+        hash[str[i].toLowerCase()] = true;
+        longestWords.push(str[i]);
+      };
+    };
+  };
+  return longestWords;
+};
+
 
 
 
