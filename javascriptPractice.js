@@ -344,6 +344,20 @@ var longestWords2 = function(str){
   return longestWords;
 };
 
+// Write a function that takes a string and replace every letter 'x' with the letter 'y'.
+
+var replaceX = function (str) {
+  var newStr = [];
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] === 'x') {
+      newStr.push('y');
+    }else {
+      newStr.push(str[i]);
+    }
+  };
+  return newStr.join('');
+};
+
 
 
 
