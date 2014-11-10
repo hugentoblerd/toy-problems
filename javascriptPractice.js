@@ -358,6 +358,21 @@ var replaceX = function (str) {
   return newStr.join('');
 };
 
+// Given a standard clock face write a function that will return the inner angle between the hour and the minute hands.
+
+var innerAngle = function (hr, m) {
+  if (hr > 12 || hr < 1 || m > 59 || m < 0) {
+    console.log('Invalid time...')
+    return false
+  }else {
+    hrAngle = 0.5 * (hr * 60 + m);
+    mAngle = 6 * m;
+    angle = Math.abs(hrAngle - mAngle);
+    angle = Math.min(angle, 360 - angle);
+  }
+  return angle;
+};
+
 
 
 
