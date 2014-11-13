@@ -373,6 +373,25 @@ var innerAngle = function (hr, m) {
   return angle;
 };
 
+// Write a function that counts up to 5 then adds 10 and counts from 15 to 20 then adds 10 and counts from 30 to 35 then adds 10 and so on and so forth
+
+var count = function () {
+  var num = 0;
+  var bool;
+  return function () {
+    if (num !== 0 && !bool && num % 5 === 0) {
+      num += 10;
+      bool = true;
+    }else {
+      num += 1;
+      bool = false;
+    }
+    return num;
+  };
+};
+
+var counter = count();
+
 
 
 
