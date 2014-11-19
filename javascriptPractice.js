@@ -392,6 +392,33 @@ var count = function () {
 
 var counter = count();
 
+// 
+
+function delegate (child) {
+  return function anon() {
+    var mathObj = this[child];
+    for (var key in this) {
+      if (this[key] === anon) {
+        return mathObj[key].apply(mathObj, arguments);
+      };
+    };
+  }
+};
+// DON'T TOUCH ANY CODE BELOW THIS
+var obj = {
+  math: {
+    x: 2,
+    add: function (y) {
+      return this.x + y;
+    },
+    multiply: function (y) {
+      return this.x * y;
+    }
+  },
+  add: delegate('math');
+  multiply: delegate('math');
+};
+
 
 
 
